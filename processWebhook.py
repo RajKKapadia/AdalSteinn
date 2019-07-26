@@ -22,7 +22,7 @@ def webhook():
         url = "https://graph.facebook.com/v2.6/me/pass_thread_control?access_token="+API_KEY
         PSID = req.get("originalDetectIntentRequest").get("payload").get("data").get("sender").get("id")
         payload = {"recipient":{"id":str(PSID)},
-                   "target_app_id":APP_ID,
+                   "target_app_id":263902037430900,
                    "metadata":"String to pass to secondary receiver app"}
         data = requests.post(url, data=json.dumps(payload), headers=headers)
         if data.status_code == 200:
